@@ -3,7 +3,7 @@
  * @Github: https://github.com/kotwzjc
  * @Date: 2021-04-10 20:22:37
  * @LastEditors: kotwzjc
- * @LastEditTime: 2021-04-11 19:54:09
+ * @LastEditTime: 2021-04-11 20:50:03
  */
 /*
  * @lc app=leetcode.cn id=17 lang=cpp
@@ -65,13 +65,13 @@ class Solution {
 public:
     // 递归
     /*
-    void bfs(string digits, vector<vector<string>> symbols, int count, int length, vector<string>& ans, string tmp) {
+    void dfs(string digits, vector<vector<string>> symbols, int count, int length, vector<string>& ans, string tmp) {
             if (count == length)
                 ans.push_back(tmp);
             else {
                 int digit = int(digits[count] - '0');
                 for(int i = 0; i < symbols[digit - 2].size(); ++i)
-                    bfs(digits, symbols, count + 1, length, ans, tmp+symbols[digit - 2][i]);
+                    dfs(digits, symbols, count + 1, length, ans, tmp+symbols[digit - 2][i]);
             }
     }*/
 
@@ -146,7 +146,7 @@ public:
         int len = digits.size();
         if (len == 0) return ans;
         
-        bfs(digits, symbols, 0, len, ans, tmp);
+        dfs(digits, symbols, 0, len, ans, tmp);
 
         return ans;*/
 
